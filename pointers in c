@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main() {
+    int a = 10;
+    int b = 20;
+    int *p1, *p2;  
+    int **pp;      
+    p1 = &a;       
+    p2 = &b;       
+    pp = &p1;      
+
+    printf("Address of a: %p\n", (void*)&a);
+    printf("Address of b: %p\n", (void*)&b);
+    printf("Address of p1: %p\n", (void*)&p1);
+    printf("Address of p2: %p\n", (void*)&p2);
+    printf("Address of pp: %p\n", (void*)&pp);
+    printf("Value of a: %d\n", a);
+    printf("Value of b: %d\n", b);
+    printf("Value at p1 (a): %d\n", *p1);
+    printf("Value at p2 (b): %d\n", *p2);
+    printf("Value at pp (p1): %p\n", (void*)*pp);
+    printf("Value at *pp (a): %d\n", **pp);
+    printf("\nChanging value of a using pointer p1\n");
+    *p1 = 30;
+    printf("New value of a: %d\n", a);
+    printf("Value at p1 (new a): %d\n", *p1);
+    printf("\nPointer Arithmetic\n");
+    int arr[3] = {10, 20, 30};
+    int *p = arr;  // p points to the first element of arr
+    printf("Address of arr: %p\n", (void*)arr);
+    printf("Address of p: %p\n", (void*)p);
+    printf("Value at p (arr[0]): %d\n", *p);
+    p++;  // Move the pointer to the next element
+    printf("Address after p++: %p\n", (void*)p);
+    printf("Value at p (arr[1]): %d\n", *p);
+    p++;  // Move the pointer to the next element
+    printf("Address after p++: %p\n", (void*)p);
+    printf("Value at p (arr[2]): %d\n", *p);
+
+    return 0;
+}
